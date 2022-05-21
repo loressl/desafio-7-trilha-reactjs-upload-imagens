@@ -41,10 +41,11 @@ export default async function handler(
       .then(() => {
         return res.status(201).json({ success: true });
       })
-      .catch(err =>
-        res
+      .catch(err =>{
+        return res
           .status(501)
           .json({ error: `Sorry something Happened! ${err.message}` })
+      }
       );
   }
 
